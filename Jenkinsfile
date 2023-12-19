@@ -9,20 +9,13 @@ pipeline {
                     sh "./gradlew test"
 
 
-                    archiveArtifacts: 'build/test-results/*.xml'
+                    archiveArtifacts 'build/test-results/test/*.xml'
 
 
                     cucumber(
                         buildStatus: 'UNSTABLE',
                         reportTitle: 'Rapport Cucumber',
-                        fileIncludePattern: '**/*.json',
-                        trendsLimit: 10,
-                        classifications: [
-                            [
-                                'key': 'Browser',
-                                'value': 'Firefox'
-                            ]
-                        ]
+                        fileIncludePattern: '**/*.json'
                     )
                 }
 
