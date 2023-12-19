@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage("Test") {
             steps {
-                script {
+
 
                     sh "./gradlew test"
 
 
-                    archiveArtifacts: 'build/reports/tests/*'
+                    archiveArtifacts: 'build/test-results/*.xml'
 
 
                     cucumber(
@@ -25,7 +25,7 @@ pipeline {
                         ]
                     )
                 }
-            }
+
         }
     }
 
