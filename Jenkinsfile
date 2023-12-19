@@ -9,7 +9,7 @@ pipeline {
                     sh "./gradlew test"
 
 
-                    junt 'build/test-results/test/*.xml'
+                    junit 'build/test-results/test/*.xml'
 
 
                     cucumber(
