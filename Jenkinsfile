@@ -9,7 +9,7 @@ pipeline {
                     sh "./gradlew test"
 
 
-                    archiveArtifacts artifacts: 'build/reports/tests/*'
+                    archiveArtifacts: 'build/reports/tests/*'
 
 
                     cucumber(
