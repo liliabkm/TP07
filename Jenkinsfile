@@ -19,6 +19,17 @@ pipeline {
                     )
                 }
 
+
+
+
+                 stage("Notiy") {
+                            steps {
+
+                notifyEvents message: 'Hello <b>world</b>', token: 'fmn--poqmgyccjg3mftvnnntl9xgxpur'
+
+                                }
+
+
         }
     }
 
